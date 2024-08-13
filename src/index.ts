@@ -1,13 +1,13 @@
-import { isNPM, isYarn } from './utils'
+import { isNPM, isYarn } from "./utils"
 
 function main() {
   if (isYarn()) {
-    import('./yarn_sh')
+    import("./yarn_sh")
     return
   }
 
   if (isNPM()) {
-    import('./npm_sh')
+    import("./npm_sh")
     return
   }
 }

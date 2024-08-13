@@ -1,13 +1,16 @@
 {
   "name": "@tangji/npmrc",
   "version": "0.0.1",
-  "description": "My awesome typescript library",
+  "description": "快速配置 npmrc",
   "publishConfig": {
     "access": "public"
   },
   "files": [
     "dist"
   ],
+  "bin": {
+    "mirror": "./dist/index.js"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
@@ -16,7 +19,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm",
+    "build-fast": "tsup src/index.ts --format cjs,esm --clean",
     "build": "pnpm run build-fast -- --dts-resolve",
     "test": "vitest run",
     "prepublishOnly": "pnpm run build"

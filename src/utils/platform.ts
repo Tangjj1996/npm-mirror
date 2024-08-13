@@ -1,9 +1,13 @@
-export const isPNPM = () => {}
+const userAgent = process.env.npm_config_user_agent || ""
+
+export const isPNPM = () => {
+  return userAgent.includes("pnpm")
+}
 
 export const isYarn = () => {
-  return true
+  return userAgent.includes("yarn")
 }
 
 export const isNPM = () => {
-  return true
+  return userAgent.includes("npm") && !isPNPM() && !isYarn()
 }

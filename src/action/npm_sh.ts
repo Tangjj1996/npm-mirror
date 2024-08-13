@@ -3,7 +3,7 @@ import { execa } from "execa"
 async function start() {
   try {
     // 设置 npm registry
-    await execa("npm", ["set", "registry", "https://registry.npmmirror.com"])
+    execa`npm set registry https://registry.npmmirror.com`
     console.log("npm registry 已成功设置为 https://registry.npmmirror.com")
 
     // 设置 node-gyp 编译依赖的 node 源码镜像

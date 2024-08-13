@@ -6,7 +6,9 @@
     "access": "public"
   },
   "files": [
-    "dist"
+    "dist",
+    ".temp",
+    "package.json"
   ],
   "bin": {
     "mirror": "./dist/index.mjs"
@@ -19,8 +21,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm --clean",
-    "build": "pnpm run build-fast -- --dts-resolve",
+    "build": "tsup",
     "test": "vitest run",
     "prepublishOnly": "pnpm run build"
   },

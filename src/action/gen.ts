@@ -3,8 +3,8 @@ import path from "path"
 
 export async function gen(options: any) {
   const { npmrc, mirror } = options
-  const npmrcPath = path.resolve(__dirname, ".temp", ".npmrc")
-  const mirrorPath = path.resolve(__dirname, ".temp", "mirror.sh")
+  const npmrcPath = path.resolve(__dirname, "../", ".temp", ".npmrc")
+  const mirrorPath = path.resolve(__dirname, "../", ".temp", "mirror.sh")
   const curPath = process.cwd()
   const npmrcDest = path.resolve(curPath, ".npmrc")
   const mirrorDest = path.resolve(curPath, "mirror.sh")
